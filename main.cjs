@@ -11,11 +11,8 @@ module.exports = {
 						language: "pml",
 						includes: ["pdml:core", "pdml:extensions"],
 						id: "pml:core",
-						path: vscode.Uri.joinPath(
-							context.extensionUri,
-							"completions",
-							"pml.mjs",
-						).fsPath,
+						path: vscode.Uri.joinPath(context.extensionUri, "completions.mjs")
+							.fsPath,
 					},
 				],
 			},

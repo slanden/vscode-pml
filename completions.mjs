@@ -1,4 +1,3 @@
-import { CompletionType, mDoc } from "./lib.mjs";
 import { CompletionItemKind } from "vscode-languageserver";
 
 const PML_DOC_BASE_URL = "https://pml-lang.dev";
@@ -450,4 +449,20 @@ A node containing text. This node is not usually used in hand-written documents,
 [PML Reference](${PML_DOC_BASE_URL}${PML_REF_SUBDIR}/#node_text)`),
 		},
 	];
+}
+
+// TODO: Copied from pdml extension; publish a
+// 			 package extension devs can use instead
+/**@typedef {Symbol} CompletionType */
+const CompletionType = Object.freeze({
+	Empty: 1,
+	BeginNode: 2,
+	EndNamespace: 3,
+});
+
+function mDoc(markdownString) {
+	return {
+		kind: "markdown",
+		value: markdownString,
+	};
 }
